@@ -30,13 +30,20 @@ namespace TesteGlobalTecnologia
                 } while (!ValidaInt(valFin));
 
                 relogio.Start();
-                Console.WriteLine("\n\nProcessando...aguarde.");
+                Console.WriteLine("\n\nProcessando...aguarde.\n");
 
                 long[] divisores = ObtemDivisores(Convert.ToInt32(valIni), Convert.ToInt32(valFin));
                 long resultado = ObtemMenorDivisor(divisores);
 
-                Console.WriteLine("O Menor divisor da sequencia [ " + divisores[0] + " - " + divisores[divisores.Length - 1] + " ]: " + resultado);
-                Console.WriteLine("Tempo gasto: " + relogio.ElapsedMilliseconds + "ms");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("O Menor divisor da sequencia [ " + divisores[0] + " - " + divisores[divisores.Length - 1] + " ]: ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(resultado);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Tempo gasto: ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(relogio.ElapsedMilliseconds + "ms");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             catch(Exception ex)
             {
